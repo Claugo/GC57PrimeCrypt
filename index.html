@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La mia pagina web</title>
+    <style>
+        /* Layout generale */
+        body {
+            background-color: #9b9595;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .evidenziato {
+            color: #1411bb; /* Colore per il testo */
+            font-weight: bold; /* Grassetto per il testo */
+            font-style: italic;
+            background-color: #e0d538; /* Sfondo per evidenziare */
+        }
+
+
+        #titolo {
+            color: #071b72;
+            font-size: 34px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .contenitore {
+            display: flex;
+            align-items: center; /* Centra verticalmente */
+            justify-content: center; /* Centra orizzontalmente */
+            margin-top: 20px;
+            flex-wrap: wrap; /* Gestisce il layout su schermi più piccoli */
+            gap: 20px; /* Spaziatura tra gli elementi */
+        }
+
+        #immagine,
+        #video {
+            max-width: 480px;
+            height: auto;
+            cursor: pointer;
+            /* Rimuovi margini manuali */
+            margin: 0;
+        }
+
+        .colonna-testo {
+            color: #0c174b;
+            /*margin-left: 10%; distanzia la colonna dalla immagine o video posto a sinistra*/
+            padding: 10px;
+            /*padding-left: 10px;*/
+            max-width: 480px;
+            text-align: left; /* Testo centrato */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            background-color: #1faaa3;
+        }
+
+        #testo-sotto {
+            color: #1b2555;
+            text-align: left;
+            margin-top: 30px;
+            width: 80%; /* Riduci la larghezza per centralizzare */
+            margin: 0 auto; /* Centra automaticamente */
+        }
+
+        /* Media query per dispositivi più piccoli */
+        @media (max-width: 768px) {
+            .contenitore {
+            flex-direction: column;
+            }
+
+            #immagine,
+            #video {
+                max-width: 100%;
+            }
+
+            .colonna-testo {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1 id="titolo">GC57PrimeCrypt</h1>
+
+    <!-- Contenitore per l'immagine e il testo -->
+    <div class="contenitore">
+        <img id="immagine" src="immagine.png" alt="Il mio algoritmo" onclick="openFullscreen(this)">
+        <div class="colonna-testo">
+            <h2>Algoritmo creazione Semiprimi</h2>
+            <p>Qui accanto viene mostrato l'algoritmo che crea la chiave e definisce l'intervallo in cui
+                il GC57 riesce a fattorizzare il semiprimo creato in un tempo inferiore al secondo. 
+                L'esempio numerico riportato è basato su numeri molto piccoli rispetto a quelli postati nel video sotto
+                Questo naturalmente è dovuto alla mancanza di spazio nel visualizzare numeri molto grandi.
+                Potete eseguire i vostri esperimenti basandovi sulla regola applicata e cioè:<br><br>
+                <span class="evidenziato">  
+                1- A un numero intero maggiore di 2<br>
+                2- B un numero intero uguale ad A o maggiore<br>
+                3- Ae un numero intero maggiore di 2<br>
+                4- Be un numero intero uguale a A2+4 o maggiore</span><br><br>
+                Provate per esempio con questi numeri:<br><br>
+                A=<span class="evidenziato">1218713597335712790016419823716708417238723885406353871^30</span><br>
+                B=<span class="evidenziato">397079713851195197393181907140028359889909599780677869^35</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Contenitore per il video e il testo -->
+    <div class="contenitore">
+        
+        <iframe id="video" width="480" height="320" src="https://www.youtube.com/embed/wYFqoT4jPjk" frameborder="0"
+            allowfullscreen></iframe>
+        <div class="colonna-testo">
+            <h2>Come funziona l'algoritmo GC57</h2>
+            <p>In questo video viene mostrato il caricamento di numeri semiprimi da diversi file.
+                Questi file sono divisi per dimensione di Bit e contengono diversi semiprimi.
+                Quando viene caricato il tipo di file che vogliamo analizzare, questo carica la chiave
+                ad essa collegata e ogni file avrà la sua chiave per fattorizzare il semiprimo selezionato.<br><br>
+                I semiprimi vengono caricati in modo casuale mentre la chiave rimane costante.
+                Tramite il pulsante "INFO NUMERO" eseguo l'analisi sui divisori trovati, lunghezza,dimensione in Bit, proprietà <br><br>
+                La velocità di fattorizzazione sarà sempre in O(1) meno di un secondo, per qualsiasi dimesione
+                verrà selezionata<br><br>
+            
+            </p>
+        </div>
+    </div>
+
+    <!-- Testo centrale sotto le colonne -->
+    <div id="testo-sotto">
+        <p><hr>
+        La proprietà utilizzata dall'algoritmo GC57 per la fattorizzazione dei grandi semiprimi si basa sull'individuazione di
+        una chiave generica.<br><br>
+        Questa chiave, associata a un insieme di semiprimi diversi tra loro ma con lo stesso peso in bit, permette di fattorizzarli<br>
+        in un tempo costante O(1), ovvero in meno di un secondo.<br><br>
+        Il processo è applicabile a semiprimi già generati e archiviati in file, garantendo la stessa velocità di calcolo<br>
+        indipendentemente dalla loro dimensione. Per esempio: 8000 bit, 10000 bit, 13000 bit e oltre.<br><br>
+        È importante chiarire che il riferimento a semiprimi già generati e archiviati non deve trarre in inganno:<br>
+        Questa procedura è finalizzata esclusivamente a ottenere una velocità di esecuzione in tempo O(1) per la fattorizzazione e non<br>
+        riguarda il tempo necessario per trovare due numeri primi molto grandi. Questo approccio evita che il programma di<br>
+        crittografia incontri colli di bottiglia nella ricerca di tali numeri, garantendo al contempo prestazioni ottimali.<br><br><br>
+        <h2>GC57PrimeCrypt</h2><br>
+        Il progetto, o meglio i progetti GC57crypto, sono nati con l'obiettivo di dare una forma pratica alla mia scoperta.<br>
+        GC57PrimeCrypt è l'ultimo di questi progetti, ma non è l'unico.<br>
+        Tra tutti, questo progetto si distingue come uno dei più riusciti, poiché combina la complessità della fattorizzazione<br>
+        di grandi semiprimi con l'implementazione di algoritmi avanzati come SHA-3, PBKDF2 e AES. Il programma è interamente<br>
+        scritto in Python e include una spiegazione dettagliata dei passaggi necessari per la criptazione sia del testo che dei<br>
+        suoi eventuali allegati. L'unico elemento mancante nel programma, così come negli altri progetti basati sullo stesso<br>
+        principio, è rappresentato dalle librerie contenenti i semiprimi pre-generati e le rispettive chiavi. A tal proposito,<br>
+        esiste un altro programma, anch'esso scritto in Python, e che si occupa della creazione di queste librerie.<br>
+        Questo programma lo fornirò a chi desidera testare il mio metodo di criptazione. In tal caso è possibile fare richiesta per<br>
+        ottenere gratuitamente il software con annesse tutte le indicazione per la generazione di quelle librerie.<br><br>
+        Naturalmente siete liberi di sviluppare un vostro programma di criptazione utilizzando il metodo GC57, unica cosa che chiedo<br>
+        è quella di essere informato in caso di utilizzo in programmi di sicurezza o in altre questioni che la riguardano.<br><hr>
+        </p>
+    </div>
+
+    <script>
+        function openFullscreen(img) {
+            // Verifica se il browser supporta la modalità schermo intero
+            if (img.requestFullscreen) {
+                img.requestFullscreen();
+            } else if (img.mozRequestFullScreen) { // Firefox
+                img.mozRequestFullScreen();
+            } else if (img.webkitRequestFullscreen) { // Chrome, Safari e Opera
+                img.webkitRequestFullscreen();
+            } else if (img.msRequestFullscreen) { // IE/Edge
+                img.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+
+</html>
