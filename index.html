@@ -67,6 +67,20 @@
             width: 80%; /* Riduci la larghezza per centralizzare */
             margin: 0 auto; /* Centra automaticamente */
         }
+        #formula {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+
+        #testo-sotto,
+        #testo-sopra,
+        #testo-destra {
+            font-size: 18px;
+            text-align: center;
+            /* Cambia in left se vuoi allinearlo a sinistra */
+        }
+
 
         /* Media query per dispositivi più piccoli */
         @media (max-width: 768px) {
@@ -85,6 +99,8 @@
         }
 
     </style>
+    <!-- MathJax -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -160,6 +176,44 @@
         è quella di essere informato in caso di utilizzo in programmi di sicurezza o in altre questioni che la riguardano.<br><hr>
         </p>
     </div>
+    
+    <!-- Formula matematica -->
+    <h1 id="titolo">Riepilogando</h1>
+    <div id="formula">
+        $$ (a^{ae} + 1)(b^{be} + 1) = np $$
+    </div>
+    <p id="testo-sopra">Calcola il prodotto di np</p>
+    <div id="formula">
+        $$ Ce = [\log_{b^{be}}(np)] $$
+    </div>
+    <p id="testo-sopra">Calcola l'esponente Ce.</p>
+    <div id="formula">
+        $$ C = b^{ce} $$
+    </div>
+    <p id="testo-sopra">Calcola la chiave C.</p>
+    <div id="formula">
+        $$ I =[ \frac{C}{(np \mod C)}] $$
+    </div>
+    <p id="testo-sopra">Calcola L'intevallo dove GC57 può fattorizzare a tempo zero.<br>Le parentesi quadra indica la parte intera della divisione</p>
+    <div id="formula">
+        $$ j1 = \text{randint}(1, I) $$
+        $$ j2 = \text{randint}(1, I) $$
+    </div>
+    <p id="testo-sopra">Seleziona un numero a caso all'interno di I, sia per j1 che per j2</p>>
+    <div id="formula">
+        $$ A=nextprime(a^{ae} + j1) $$
+        $$ B=nextprime(b^{be} + j2) $$
+    </div>
+    <p id="testo-sopra">Trova un numero primo subito dopo al numero creato</p>
+    <div id="formula">
+        $$ AB = S $$
+    </div>
+    <p id="testo-sopra">Calcola il semiprimo S</p>
+    <div id="formula">
+        $$ {Mcd(S,S\mod C)}=A $$
+    </div>
+    <p id="testo-sopra">Applica la proprietà del GC57 e ti restituirà il Fattore A</p>
+
 
     <script>
         function openFullscreen(img) {
