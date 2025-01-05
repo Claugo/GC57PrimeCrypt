@@ -1,1 +1,196 @@
-<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>La mia pagina web</title><style>body{ background-color: #4a6d857c; font-family: Arial, sans-serif; margin: 0; padding: 20px;} #formula-container{ overflow-x: auto; overflow-y: hidden; white-space: nowrap;} #formula{ text-align: center; font-size: 18px; margin: 10px 0;} #testo-sopra{ text-align: center; font-size: 16px; margin-bottom: 20px;} .evidenziato{ color: #1411bb; font-weight: bold; font-style: italic; background-color: #e0d538; } #titolo{ color: #071b72; font-size: 34px; text-align: center; margin-top: 50px;} nav{ text-align: center; margin-top: 20px;} nav a{ display: inline-block; margin: 10px; text-decoration: none; color: white; background-color: #1411bb; padding: 10px 20px; border-radius: 5px; transition: background-color 0.3s; } nav a:hover{ background-color: #680606; } .contenitore{ display: flex; align-items: center; justify-content: center; margin-top: 20px; flex-wrap: wrap; gap: 20px; } #immagine{ max-width: 640px; height: auto; cursor: pointer; margin: 0;} .colonna-testo{ color: #0c174b; padding: 10px; max-width: 480px; text-align: left; word-wrap: break-word; overflow-wrap: break-word; background-color: #4a6d857c;} #testo-sotto{ font-size: 18px; color: #1b2555; text-align: left; margin-top: 30px; margin-left: 40%; width: 50%; margin: 0 auto;} @media (max-width: 768px){ .contenitore{ flex-direction: column;} #immagine, #video{ max-width: 100%;} .colonna-testo{ width: 100%;}} </style></head><body><h1 id="titolo">Alcune riflessioni</h1><div class="contenitore"><img id="immagine" src="immagine.jpg" alt="Il mio algoritmo" onclick="openFullscreen(this)"><div class="colonna-testo"><h2>Questo sistema è molto giovane e ancora pieno di segreti:</h2><p>Ci sono anora cose che non sono molto chiare sul suo funzionamento, almeno per me che non ho molta padronanza con l'algebra, come per esempio il fatto di riuscire a fattorizzare con una sola chiave miliardi di miliardi di semiprimi molto grandi. Esiste poi un'altra chiave che al momento è in fase di ricerca, anche se ha già dimostrato di essere molto più potente di quella che ho descritto. Questa chiave si trova anche più facilmente e per mostrarla vi porto un esempio:<br><br>Prendiamo questi due numeri primi<br>A=1610902298697506995420615776860257149450741423977277656721549039334606673119^15<br><br>B=1035958771023975681489829644247454212416745444999502959043602032745279341376899624419724111454147^20<br><br>Con la chiave che ho descritto, il mio intervallo è di 2^1036, mentre con la chiave nuova, l'intervallo è di 2^2630. Questo risultato lascia a bocca aperta se pensate che qualsiasi semiprimo creato da questa struttura e preso all'interno di questo intervallo, può essere fattorizzato in meno di un secondo.<br><br>Ma di questo ne potremo casomai parlare in un secondo momento sulla base dell'interesse mostrato da voi. </p></div></div><div id="testo-sotto"><p><hr>Questo sistema non solo può interessare la sicurezza informatica, ma anche la ricerca sulla teoria dei numeri,<br>che riguarda in particolar modo l'equazione diofantea, o diofantina, di secondo grado non lineare. <br><br>Questo tipo di equazione ab+ay+bx+xy=c, dove i coefficienti noti a,b,c sono numeri interi, mentre x e y due incognite di numeri interi, sta incontrando molte difficoltà nel trovare queste incognite, al punto di essere paragonata alla difficoltà di fattorizzare numeri semiprimi molto grandi.<br><br>Proviamo ora a immaginare questo tipo di equazione con i numeri riportati sopra e le incognite x e y che pescano un numero a caso all'interno dell'intervallo 2^1036 o 2^2630. Chi è qual bravo studente che riuscirebbe, senza metterci una vita, a trovare queste due incognite? Nessuno immagino.<br><br>Ma adesso questo è fattibile grazie a questa nuova proprietà e la conoscenza dei coefficienti a,b,c porta alla soluzione rapida dell'equazione. Naturalmente questa proprietà non è globale in quanto agisce solo su un determinato intervallo e su a e b distanti da loro. Per fare un piccolo esempio se a=12345 e b=98765, non ci sarebbe soluzione per questo tipo di dati, in quanto la distanza esiste ma per questa proprietà la distanza deve essere in cifre, come per esempio a=12345, b=12345678.<br><br>Un calcolo approsimativo stabilisce che l'intervallo in cui questa proprietà riesce a risolvere l'equazione è pari alla 10 elevato alla differenza di cifre, che nel secondo caso sarebbe 10^3. E' un calcolo approsimativo ma dà subito l'idea di quanto potrebbe essere il nostro intervallo di risoluzione. Su questo però ci sarebbe altre novità molto interessanti da dire, ma mi fermo qui per adesso.<br><br>Aggiungo solo che la differenza tra la sicurezza e l'agoritmo diofantino, è che nel primo caso l'unico dato conosciuto deve essere il semiprimo, mentre nel secondo caso tutti e tre i coefficienti. <hr></p></div><nav><a href="index.html">Home</a></nav>
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La mia pagina web</title>
+    <style>
+        /* Layout generale */
+        body {
+            background-color: #4a6d857c;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #formula-container {
+            overflow-x: auto; /* Scroll orizzontale per grandi formule */
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+        #formula {
+            text-align: center;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        #testo-sopra {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .evidenziato {
+            color: #1411bb;
+            /* Colore per il testo */
+            font-weight: bold;
+            /* Grassetto per il testo */
+            font-style: italic;
+            /* Corsivo */
+            background-color: #e0d538;
+            /* Sfondo per evidenziare */
+        }
+
+        #titolo {
+            color: #071b72;
+            font-size: 34px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            display: inline-block; /* Imposta come blocco inline per il padding */
+            margin: 10px;
+            text-decoration: none; /* Rimuove la sottolineatura */
+            color: white; /* Colore del testo */
+            background-color: #1411bb; /* Colore di sfondo del pulsante */
+            padding: 10px 20px; /* Padding interno */
+            border-radius: 5px; /* Angoli arrotondati */
+            transition: background-color 0.3s; /* Transizione per l'effetto hover */
+        }
+        nav a:hover {
+            background-color: #680606; /* Colore di sfondo al passaggio del mouse */
+        }
+
+        .contenitore {
+            display: flex;
+            align-items: center;
+            /* Centra verticalmente */
+            justify-content: center;
+            /* Centra orizzontalmente */
+            margin-top: 20px;
+            flex-wrap: wrap;
+            /* Gestisce il layout su schermi più piccoli */
+            gap: 20px;
+            /* Spaziatura tra gli elementi */
+        }
+
+
+
+        #immagine{
+            max-width: 640px;
+            height: auto;
+            cursor: pointer;
+            /* Rimuovi margini manuali */
+            margin: 0;
+        }
+
+        .colonna-testo {
+            color: #0c174b;
+            padding: 10px;
+            max-width: 480px;
+            text-align: left;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            background-color: #4a6d857c;
+        }
+
+        #testo-sotto {
+            font-size: 18px;
+            color: #1b2555;
+            text-align: left;
+            margin-top: 30px;
+            margin-left: 40%;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+
+        /* Media query per dispositivi più piccoli */
+        @media (max-width: 768px) {
+            .contenitore {
+                flex-direction: column;
+            }
+
+            #immagine,
+            #video {
+                max-width: 100%;
+            }
+
+            .colonna-testo {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="titolo">Alcune riflessioni</h1>
+
+
+    <!-- Contenitore per l'immagine e il testo -->
+    <div class="contenitore">
+        <img id="immagine" src="immagine.jpg" alt="Il mio algoritmo" onclick="openFullscreen(this)">
+        <div class="colonna-testo">
+            <h2>Questo sistema è molto giovane e ancora pieno di segreti:</h2>
+            <p>Ci sono anora cose che non sono molto chiare sul suo funzionamento, almeno per me che non ho molta
+               padronanza con l'algebra, come per esempio il fatto di riuscire a fattorizzare con una sola chiave
+               miliardi di miliardi di semiprimi molto grandi. Esiste poi un'altra chiave che al momento è in fase
+               di ricerca, anche se ha già dimostrato di essere molto più potente di quella che ho descritto. Questa
+               chiave si trova anche più facilmente e per mostrarla vi porto un esempio:<br><br>
+               Prendiamo questi due numeri primi<br>
+               A=1610902298697506995420615776860257149450741423977277656721549039334606673119^15<br><br>
+               B=1035958771023975681489829644247454212416745444999502959043602032745279341376899624419724111454147^20<br><br>
+               Con la chiave che ho descritto, il mio intervallo è di 2^1036, mentre con la chiave nuova, l'intervallo
+               è di 2^2630. Questo risultato lascia a bocca aperta se pensate che qualsiasi semiprimo creato da questa
+               struttura e preso all'interno di questo intervallo, può essere fattorizzato in meno di un secondo.<br><br>
+               Ma di questo ne potremo casomai parlare in un secondo momento sulla base dell'interesse mostrato da voi.            
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Testo centrale sotto le colonne -->
+    <div id="testo-sotto">
+        <p>
+            <hr> 
+            Questo sistema non solo può interessare la sicurezza informatica, ma anche la ricerca sulla teoria dei numeri,<br>
+            che riguarda in particolar modo l'equazione diofantea, o diofantina, di secondo grado non lineare. <br><br>
+
+            Questo ti di equazione ab+ay+bx+xy=c, dove i coefficienti noti a,b,c sono numeri interi, mentre x e y due interi sconosciuti, sta
+            incontrando molte difficoltà nel trovare queste incognite, al punto di essere paragonata alla difficoltà di fattorizzare
+            numeri semiprimi molto grandi.<br><br>
+          
+            Proviamo ora a immaginare questo tipo di equazione con i numeri riportati sopra e le incognite x e y che pescano
+            un numero a caso all'interno dell'intervallo 2^1036 o 2^2630. Chi è qual bravo studente che riuscirebbe, senza 
+            metterci una vita, a trovare queste due incognite? Nessuno immagino.<br><br>
+            Ma adesso questo è fattibile grazie a questa nuova proprietà e la conoscenza dei coefficienti a,b,c porta alla 
+            soluzione rapida dell'equazione. Naturalmente questa proprietà non è globale in quanto agisce solo su un determinato
+            intervallo e su a e b distanti da loro. Per fare un piccolo esempio se a=12345 e b=98765, non ci sarebbe soluzione
+            per questo tipo di dati, in quanto la distanza esiste ma per questa proprietà la distanza deve essere in cifre,
+            come per esempio a=12345, b=12345678.<br><br>
+            Un calcolo approsimativo stabilisce che l'intervallo in cui questa proprietà riesce a risolvere l'equazione è pari
+            alla 10 elevato alla differenza di cifre, che nel secondo caso sarebbe 10^3. E' un calcolo approsimativa ma dà subito
+            l'idea di quanto potrebbe essere il nostro intervallo di risoluzione. Su questo però ci sarebbero altre novità molto
+            interessanti da dire, ma mi fermo qui per adesso.<br><br>
+            Aggiungo solo che la differenza tra la sicurezza e l'agoritmo diofantino, è che nel primo caso l'unico dato conosciuto
+            deve essere il semiprimo, mentre nel secondo caso tutti e tre i coefficienti.
+            
+
+        <hr>
+        </p>
+    </div>
+    
+    <nav>
+        <a href="index.html">Home</a> 
+    </nav>
+    
