@@ -104,6 +104,13 @@
         }
 
 
+        #immagine{
+            max-width: 760px;
+            height: auto;
+            cursor: pointer;
+            /* Rimuovi margini manuali */
+            margin: 0;
+        }
 
 /* Migliora il testo sotto */
 .testo-sotto {
@@ -126,6 +133,12 @@
         flex-direction: column;
         gap: 10px;
     }
+
+    #immagine {
+            max-width: 100%;
+        }
+
+
 
     #formula {
         font-size: 14px;
@@ -225,12 +238,12 @@
     <h2>Creazione di file contenenti i semiprimi</h2>
     <div class="testo-sotto">
         <p>Con questo abbiamo terminato un ciclo dell'algoritmo. Ora, per praticità, visto che avremo a che fare con semiprimi molto grandi,<br>
-            questa scelta è strategica, perchè: Mentre la fattorizzazione avviene in O(1), meno di un secono, a prescindere dalla grandezza<br>
+            questa scelta è strategica, perchè: Mentre la fattorizzazione avviene in O(1), meno di un secondo, a prescindere dalla grandezza<br>
             del semiprimo, il ciclo dell'algoritmo che ho appena elencato, al contrario, varia in base alla grandezza del semiprimo in quanto applica<br>
             l'algoritmo probabilistico per identificare due numeri primi molto grandi.<br><br>
             Non lasciatevi ingannare dal fatto che i semiprimi vengono messi dentro un file perchè ogni volta che il ciclo si ripete, andrà a creare<br>
             un semiprimo sempre diverso e che non avrà nesssun impatto sulla sicurezza in quanto senza la sua chiave non sarà possibile fattorizzarlo.<br><br>
-            Ora, per applicare la proprietà al semiprimo, o ai semiprimi, creati, ci basterà applicare questa formula per ottenere uno dei due fattori<br>
+            Per applicare la proprietà al semiprimo, o ai semiprimi, creati, ci basterà applicare questa formula per ottenere uno dei due fattori<br>
             che lo compongono
        </p>
     </div>
@@ -239,7 +252,16 @@
     <div id="formula">
         $$ \textcolor{blue}{{Mcd(S,S\mod C)} = A} $$
     </div>
-</div></body>
+<hr>
+    <p id="testo-sopra"><h2>Ecco un esempio con due piccoli numeri primi:</h2></p>
+
+    <div class="contenitore">
+        <img id="immagine" src="formula.png" alt="Il mio algoritmo" onclick="openFullscreen(this)">
+    </div>
+
+
+</div>
+</body>
     <nav>
         <a href="index.html">Home</a>
     </nav>
