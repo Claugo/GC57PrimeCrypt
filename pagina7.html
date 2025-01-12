@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La mia pagina web</title>
+    <style>
+        /* Layout generale */
+        body {
+            background-color: #c7b8a4f3;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #formula-container {
+            overflow-x: auto; /* Scroll orizzontale per grandi formule */
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+        #formula {
+            text-align: center;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+
+        .evidenziato {
+            color: #1411bb;
+            /* Colore per il testo */
+            font-weight: bold;
+            /* Grassetto per il testo */
+            font-style: italic;
+            /* Corsivo */
+            background-color: #e0d538;
+            /* Sfondo per evidenziare */
+        }
+
+        #titolo {
+            color: #071b72;
+            font-size: 34px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            display: inline-block; /* Imposta come blocco inline per il padding */
+            margin: 10px;
+            text-decoration: none; /* Rimuove la sottolineatura */
+            color: white; /* Colore del testo */
+            background-color: #1411bb; /* Colore di sfondo del pulsante */
+            padding: 10px 20px; /* Padding interno */
+            border-radius: 5px; /* Angoli arrotondati */
+            transition: background-color 0.3s; /* Transizione per l'effetto hover */
+        }
+        nav a:hover {
+            background-color: #0d0f8a; /* Colore di sfondo al passaggio del mouse */
+        }
+
+        .contenitore {
+            display: flex;
+            align-items: center;
+            /* Centra verticalmente */
+            justify-content: center;
+            /* Centra orizzontalmente */
+            margin-top: 20px;
+            flex-wrap: wrap;
+            /* Gestisce il layout su schermi più piccoli */
+            gap: 20px;
+            /* Spaziatura tra gli elementi */
+        }
+
+
+
+        #video {
+            max-width: 640px;
+            height: auto;
+            cursor: pointer;
+            /* Rimuovi margini manuali */
+            margin: 0;
+        }
+
+        .colonna-testo {
+            color: #0c174b;
+            padding: 10px;
+            max-width: 860px;
+            text-align: left;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            background-color: #c7b8a4f3;
+            font-size: 18px;
+        }
+
+
+
+        /* Media query per dispositivi più piccoli */
+        @media (max-width: 768px) {
+            .contenitore {
+                flex-direction: column;
+            }
+
+            #immagine,
+            #video {
+                max-width: 100%;
+            }
+
+            .colonna-testo {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="titolo">La creazione dei file Semiprimi</h1>
+
+
+    <!-- Contenitore per l'immagine e il testo -->
+    <div class="contenitore">
+        <div class="colonna-testo">
+            <h2>Dimostrazione Video</h2>
+            <p>In questo video mostrerò il processo di creazione dei file contenenti semiprimi, spiegato nella pagina "Formula
+            Matematica".<br><br>
+            
+            I numeri di partenza saranno due numeri primi derivati dal sistema RSA:<br><br>
+            
+            p1=12933626498230398096901777049375572485352947890865793207172831979733998678827685232160340473755513315906267040158346795140787633504529543669911221345915249<br><br>
+            p2=10321278566806560429358103618267528510871851168454952946812557896084597168250446124688505990607130664266530297955719329171994882457214711138917909307967769<br><br>
+            
+            <h2>Fasi dimostrate nel video</h2>
+            
+            Modifica degli esponenti di p1 e p2<br>
+            <em>Sullo schermo, inserirò degli esponenti per i numeri p1 e p2 e chiederò al programma di calcolare
+            la grandezza del semiprimo in bit e l’intervallo in cui riuscirà a fattorizzare il semiprimo senza implementare, espresso come potenza di 2 (2^campo)</em><br>
+            
+            "Modificando gli esponenti, sarà possibile osservare in tempo reale il cambiamento nella dimensione in bit del semiprimo
+            e del suo intervallo di risoluzione."<br><br>
+            
+            <h2>Impostazione del numero di semiprimi</h2>
+            Una volta trovata la composizione desiderata (ovvero una combinazione di p1 e p2 che genera un semiprimo con le
+            caratteristiche richieste), inserisco il numero di semiprimi da generare e memorizzare nel file, avviando poi la
+            procedura automatizzata.<br><br>
+            
+            <h2>Procedura dettagliata:</h2>
+            
+            1 - Identificazione della chiave<br>
+            <em>Nel video userò la seconda chiave accennata nella pagina "diofante" per dimostrare l’estensione del campo di
+            risoluzione, che va ben oltre quello descritto nella pagina "Formula Matematica". Questo passaggio evidenzia quanto sia
+            determinante l’uso della chiave per il processo di fattorizzazione.</em><br><br>
+            
+            2- Generazione di numeri primi<br>
+            Attraverso un metodo probabilistico, il programma calcola due numeri primi casuali usando la formula:<br>
+            p=nextprime(p1 + randint(1, I))<br>
+            q=nextprime(p2 + randint(1, I))<br>
+            
+            Dove I è un intervallo casuale specificato.<br><br>
+            
+            3 - Creazione del semiprimo<br>
+            Una volta trovati i due numeri primi, viene creato il semiprimo come prodotto di p e q:
+            S = p * q<br><br>
+            
+            4 - Fattorizzazione del semiprimo<br>
+            Il semiprimo viene fattorizzato utilizzando la proprietà della chiave:
+            <span style="color: red;">Mcd(S, S Mod C)</span><br>
+            
+            <em>Questo calcolo restituisce il numero primo più piccolo tra i due utilizzati per creare il semiprimo.<em><br><br>
+            
+            5 - Memorizzazione del semiprimo<br>
+            Il semiprimo generato viene memorizzato nel file.<br><br>
+            
+            6 - Ripetizione del ciclo<br>
+            I passaggi dal punto 2 al punto 5 vengono ripetuti per il numero di semiprimi impostato.<br><br>
+            
+            Gestione degli errori<br>
+            Se il ciclo fallisce al punto 4 (ovvero se il programma non riesce a trovare un divisore per il semiprimo), il processo
+            si bloccherà, generando un errore:
+            "Nessun divisore trovato".<br><br>
+            
+            7 - Memorizzazione della chiave<br>
+            Al termine del ciclo, se non si sono verificati errori, la chiave utilizzata viene salvata in una memoria USB. Il file
+            salvato avrà un nome che fa riferimento al semiprimo creato.
+            
+            <h2>Nota finale</h2>
+            
+            <em>Questa procedura consente di creare e memorizzare semiprimi in modo efficiente, mantenendo il sistema altamente sicuro
+            grazie all’uso della chiave. Anche in caso di accesso ai file, senza la chiave non sarà possibile fattorizzare i
+            semiprimi.</em>
+
+                
+                
+                <h2>Buona Visione</h2>
+    
+            </p>
+        </div>
+    </div>
+
+
+
+        <!-- Contenitore per il video e il testo -->
+        <div class="contenitore">
+            <p>Guarda il video completo su YouTube:
+                <a href="https://www.youtube.com/watch?v=KJlRYstmLx0" target="_blank"
+                    rel="noopener noreferrer">Librerie Semiprimi</a>
+            </p>
+        </div>
+
+
+
+    
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+    

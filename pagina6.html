@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La mia pagina web</title>
+    <style>
+        /* Layout generale */
+        body {
+            background-color: #4a6d857c;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #formula-container {
+            overflow-x: auto; /* Scroll orizzontale per grandi formule */
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+        #formula {
+            text-align: center;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        #testo-sopra {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .evidenziato {
+            color: #1411bb;
+            /* Colore per il testo */
+            font-weight: bold;
+            /* Grassetto per il testo */
+            font-style: italic;
+            /* Corsivo */
+            background-color: #e0d538;
+            /* Sfondo per evidenziare */
+        }
+
+        #titolo {
+            color: #071b72;
+            font-size: 34px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            display: inline-block; /* Imposta come blocco inline per il padding */
+            margin: 10px;
+            text-decoration: none; /* Rimuove la sottolineatura */
+            color: white; /* Colore del testo */
+            background-color: #1411bb; /* Colore di sfondo del pulsante */
+            padding: 10px 20px; /* Padding interno */
+            border-radius: 5px; /* Angoli arrotondati */
+            transition: background-color 0.3s; /* Transizione per l'effetto hover */
+        }
+        nav a:hover {
+            background-color: #680606; /* Colore di sfondo al passaggio del mouse */
+        }
+
+        .contenitore {
+            display: flex;
+            align-items: center;
+            /* Centra verticalmente */
+            justify-content: center;
+            /* Centra orizzontalmente */
+            margin-top: 20px;
+            flex-wrap: wrap;
+            /* Gestisce il layout su schermi più piccoli */
+            gap: 20px;
+            /* Spaziatura tra gli elementi */
+        }
+
+
+
+        #immagine{
+            max-width: 200px;
+            height: auto;
+            cursor: pointer;
+            /* Rimuovi margini manuali */
+            margin: 0;
+        }
+
+        .colonna-testo {
+            color: #0c174b;
+            padding: 10px;
+            max-width: 480px;
+            text-align: left;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            background-color: #4a6d857c;
+        }
+
+        #testo-sotto {
+            font-size: 18px;
+            color: #1b2555;
+            text-align: left;
+            margin-top: 30px;
+            margin-left: 40%;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+.text {
+            color: rgb(75, 12, 72); /* Colore del testo normale */
+            font-style: italic;
+        }
+
+        .email-link {
+            color: #007BFF; /* Colore azzurro per l'indirizzo email */
+            text-decoration: none; /* Rimuove la sottolineatura se non desiderata */
+        }
+        
+        .email-link:hover {
+            text-decoration: underline; /* Aggiunge la sottolineatura al passaggio del mouse */
+        }
+        /* Media query per dispositivi più piccoli */
+        
+        @media (max-width: 768px) {
+            .contenitore {
+                flex-direction: column;
+            }
+
+            #immagine,
+            #video {
+                max-width: 100%;
+            }
+
+            .colonna-testo {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="titolo">La mia passione</h1>
+
+
+    <!-- Contenitore per l'immagine e il testo -->
+    <div class="contenitore">
+        <img id="immagine" src="foto_mia.jpg" alt="Il mio algoritmo" onclick="openFullscreen(this)">
+        <div class="colonna-testo">
+<strong>Chi sono, e perché di questo sito:</strong> <br>
+Mi presento con lo pseudonimo di Claugo e sono un appassionato di numeri. Questa passione mi ha portato alla scoperta di
+una nuova tecnica di fattorizzazione, basata su una chiave numerica, che offre una scorciatoia per ottenere la
+fattorizzazione in un tempo mai visto prima. Ho volutamente introdotto il concetto di "chiave" per rappresentare l’idea
+di una porta che si apre verso la soluzione.<br><br>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Testo centrale sotto le colonne -->
+    <div id="testo-sotto">
+        <p>
+            <h1>Una Scoperta Rivoluzionaria nella Teoria dei Numeri<br>e nella Sicurezza Informatica</h1>
+            <hr> 
+            Nel 2020, mentre leggevo un articolo sull'importanza dei numeri primi nella sicurezza informatica, rimasi affascinato
+            dalla complessità nel fattorizzare un semiprimo, un numero ottenuto moltiplicando due numeri primi, e da come questa
+            difficoltà fosse cruciale per proteggere i dati. Ormai in pensione e con più tempo libero, decisi di approfondire la
+            questione, spinto dalla mia passione per i numeri. Quello che iniziò come un passatempo divenne presto una sfida
+            intellettuale appassionante.<br><br>
+            
+            Dopo mesi di esperimenti, tra tentativi e intuizioni, vissi un momento che non dimenticherò mai. Applicando quella che
+            sarebbe diventata la mia chiave numerica, vidi per la prima volta una variabile, che chiamai "X", azzerarsi
+            completamente. Quella X rappresentava la distanza numerica dalla soluzione: era come se la chiave avesse trovato
+            l’esatto punto dove aprire la porta verso uno dei fattori primi.<br><br>
+            
+            Fu un istante di pura meraviglia, il momento in cui capii che stavo toccando qualcosa di davvero significativo. La
+            chiave numerica che avevo scoperto si rivelò in grado di sbloccare direttamente i fattori primi di un semiprimo, con una
+            velocità straordinaria e costante, meno di un secondo, indipendentemente dalla lunghezza del numero.<br><br>
+            
+<h1>Le Implicazioni della Scoperta</h1><br>
+
+La scoperta di questa chiave numerica ha un potenziale rivoluzionario in diversi ambiti. Nella sicurezza informatica, la
+difficoltà di fattorizzare grandi numeri semiprimi è alla base degli algoritmi crittografici più diffusi, come RSA.<br>
+La possibilità di individuare uno dei fattori primi in modo diretto potrebbe ridefinire i paradigmi della protezione dei
+dati, con impatti significativi per la sicurezza digitale a livello globale.<br><br>
+
+Inoltre, questa chiave numerica rivela proprietà che si estendono ben oltre il dominio della fattorizzazione. Applicata
+alla forma diofantea, come descritto nella relativa pagina, si dimostra uno strumento potente per affrontare problemi
+complessi e aprire nuove direzioni di ricerca nell'ambito della teoria dei numeri e delle sue applicazioni pratiche. <br><br><hr>
+Quello che iniziò come un semplice passatempo si è trasformato in una scoperta che ha ridefinito il mio modo di vedere
+la matematica. Il momento in cui "X" arrivò a zero fu una scintilla che accese la consapevolezza di aver trovato
+qualcosa di unico. È una testimonianza del potere della curiosità e di come la passione possa portare a risultati che
+sembrano impossibili.<br><br><hr>
+<p class="text">
+    Se questa scoperta ti ha incuriosito o vuoi approfondire l’argomento, sarò felice di rispondere alle tue domande.<br>
+    Puoi contattarmi via email all’indirizzo
+    <u><em><a href="mailto:claugoru@yahoo.it" class="email-link">miaemail@example.com</a></em></u><br><br>
+    <h1>Nota importante:</h1>nonostante io abbia rivisto attentamente la formula e fornito un esempio numerico reale in linguaggio
+    di programmazione, riconosco che potrebbero esserci dettagli ancora migliorabili. Se dovessi rilevare errori o
+    riscontrare che la formula non funziona come descritto, ti invito gentilmente a segnalarmelo via email.
+    Il tuo feedback sarebbe prezioso per migliorare ulteriormente questa scoperta.
+    
+       
+    <hr>
+        </p>
+    </div>
+    
+    <nav>
+        <a href="index.html">Home</a> 
+    </nav>
+    

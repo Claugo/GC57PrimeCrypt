@@ -114,11 +114,15 @@
 
 /* Migliora il testo sotto */
 .testo-sotto {
+    color: #0b0a5e;
     font-size: 18px;
-    text-align: center;
+    text-align: left;
     /* Testo più piccolo per schermi stretti */
     padding: 10px;
-}
+    margin: 0 auto; /* Centra il blocco di testo */
+    max-width: 700px; /* Imposta una larghezza massima per il testo */
+    line-height: 1.8; /* Aumenta l'interlinea per una migliore */
+    }
 
         h2 {
             text-align: center; /* Allinea il testo al centro */
@@ -232,20 +236,40 @@
 
     <p id="testo-sopra">Calcolo il semiprimo S</p>
     <div id="formula">
-        $$ \textcolor{blue}{AB = S} $$
+        $$ \textcolor{blue}{AB = S} $$<br><br>
     </div>
 
     <!-- testo-sotto -->
     <h2>Creazione di file contenenti i semiprimi</h2>
     <div class="testo-sotto">
-        <p>Con questo abbiamo terminato un ciclo dell'algoritmo. Ora, per praticità, visto che avremo a che fare con semiprimi molto grandi,<br>
-            questa scelta è strategica, perchè: Mentre la fattorizzazione avviene in O(1), meno di un secondo, a prescindere dalla grandezza<br>
-            del semiprimo, il ciclo dell'algoritmo che ho appena elencato, al contrario, varia in base alla grandezza del semiprimo in quanto applica<br>
-            l'algoritmo probabilistico per identificare due numeri primi molto grandi.<br><br>
-            Non lasciatevi ingannare dal fatto che i semiprimi vengono messi dentro un file perchè ogni volta che il ciclo si ripete, andrà a creare<br>
-            un semiprimo sempre diverso e che non avrà nesssun impatto sulla sicurezza in quanto senza la sua chiave non sarà possibile fattorizzarlo.<br><br>
-            Per applicare la proprietà al semiprimo, o ai semiprimi, creati, ci basterà applicare questa formula per ottenere uno dei due fattori<br>
-            che lo compongono
+        <p>Con questo, abbiamo completato il ciclo dell'algoritmo principale. Per ottimizzare le prestazioni, è stata adottata una
+        scelta strategica, considerando che lavoreremo con semiprimi molto grandi.<br><br><strong>Ecco come funziona il processo:</strong><br><br>
+        
+        <span style="color:#bb1166;">1 - Individuazione della chiave e dell'intervallo</span><br>L'algoritmo principale calcola la chiave e determina l'intervallo
+        numerico all'interno del quale è in grado di fattorizzare i semiprimi. Questo passaggio non richiede implementazioni
+        aggiuntive.<br><br>
+        
+        <span style="color:#bb1166;">2 - Selezione dei numeri primi:</span><br>Nell'intervallo determinato, i numeri primi 
+        vengono selezionati casualmente utilizzando un algoritmo probabilistico. Questi numeri primi vengono quindi combinati tra loro per formare semiprimi,
+         che vengono memorizzati in un file<br><br>
+        <em>La procedura di selezione e combinazione è separata dall'algoritmo principale ed è stata
+        introdotta per evitare il collo di bottiglia che si verificherebbe generando numeri primi molto grandi in tempo reale
+        durante l'esecuzione del programma.</em><br><br>
+        
+        Questa scelta risulta strategica per due motivi principali:<br><br>
+        
+        <em>Fattorizzazione rapida:</em> Una volta che i semiprimi sono stati generati e salvati, la loro fattorizzazione avviene in O(1)
+        (ovvero in meno di un secondo), indipendentemente dalla grandezza del semiprimo.<br><br>
+        <em>Ottimizzazione del ciclo probabilistico:</em> L'algoritmo probabilistico per generare numeri primi molto grandi è
+        un'operazione più dispendiosa in termini di tempo, poiché varia in base alla grandezza del semiprimo. Spostare questa
+        fase al momento della generazione del file riduce i tempi di calcolo durante l'esecuzione del programma di codifica.<br><br>
+        
+        Non lasciatevi ingannare dal fatto che i semiprimi vengano salvati in un file: ogni volta che la procedura di selezione
+        casuale si ripete, vengono generati semiprimi diversi. Inoltre, questa memorizzazione non compromette la sicurezza,
+        poiché senza la chiave non è possibile fattorizzare il semiprimo.<br><br>
+        
+        Infine, per applicare la proprietà al semiprimo (o ai semiprimi) creati, è sufficiente utilizzare questa formula, che
+        consente di ottenere uno dei due fattori che lo compongono:
        </p>
     </div>
 

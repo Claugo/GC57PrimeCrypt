@@ -1,1 +1,225 @@
-<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>La mia pagina web</title><style>body{ background-color: #9b9595; font-family: Arial, sans-serif; margin: 0; padding: 20px;} #formula-container{ overflow-x: auto; overflow-y: hidden; white-space: nowrap;} #formula{ text-align: center; font-size: 18px; margin: 10px 0;} #testo-sopra{ text-align: center; font-size: 16px; margin-bottom: 20px;} .evidenziato{ color: #1411bb; font-weight: bold; font-style: italic; background-color: #e0d538; } #titolo{ color: #071b72; font-size: 34px; text-align: center; margin-top: 50px;} nav{ text-align: center; margin-top: 20px;} nav a{ display: inline-block; margin: 10px; text-decoration: none; color: white; background-color: #1411bb; padding: 10px 20px; border-radius: 5px; transition: background-color 0.3s; } nav a:hover{ background-color: #680606; } .contenitore{ display: flex; align-items: center; justify-content: center; margin-top: 20px; flex-wrap: wrap; gap: 20px; } #immagine{ max-width: 640px; height: auto; cursor: pointer; margin: 0;} .colonna-testo{ color: #0c174b; padding: 10px; max-width: 480px; text-align: left; word-wrap: break-word; overflow-wrap: break-word; background-color: #1faaa3;} #testo-sotto{ font-size: 18px; color: #1b2555; text-align: left; margin-top: 30px; margin-left: 40%; width: 50%; margin: 0 auto;} @media (max-width: 768px){ .contenitore{ flex-direction: column;} #immagine, #video{ max-width: 100%;} .colonna-testo{ width: 100%;}} </style></head><body><h1 id="titolo">GC57 (L'algoritmo dei grandi semiprimi)</h1><div class="contenitore"><img id="immagine" src="immagine1.png" alt="Il mio algoritmo" onclick="openFullscreen(this)"><div class="colonna-testo"><h2>Panoramica</h2><p>L'algoritmo GC57, sviluppato nel 2022, individua una chiave unica che consente di fattorizzare grandi semiprimi, di lunghezza arbitraria, in tempo costante O(1) e in meno di un secondo. Questo rappresenta un'innovazione radicale in termini di sicurezza, poiché introduce una velocità mai vista prima che permette di estrarre rapidamente i fattori primi del semiprimo, rendendo il processo assimilabile a una semplice divisione. Allo stesso tempo, per chi non possiede la chiave, rimane intatta la ben nota complessità della fattorizzazione su grandi numeri. Pur non trattandosi di un sistema globale, l'estensione di questa proprietà è notevole. La chiave individuata, infatti, è valida solo per un intervallo specifico, la cui ampiezza dipende dalla dimensione del semiprimo coinvolto, ma che può raggiungere dimensioni notevoli di 2^2000, e oltre, sui grandi semiprimi. Questo significa che all'aumentare della grandezza dei semiprimi, cresce anche la distanza tra questi intervalli, ampliando significativamente il campo di applicazione. Nel proseguo, cercherò di spiegare questo concetto in modo il più chiaro e dettagliato possibile. </p></div></div><div id="testo-sotto"><p><hr>Nelle pagine successive troverai esempi e video che illustrano il funzionamento di questo algoritmo. Inoltre, cercherò di sviluppare un enunciato matematico per rappresentare al meglio il suo procedimento.<br><br><strong>Chi sono, e perchè di questo sito:</strong><br>Mi presento con lo pseudonimo di Claugo e sono un appassionato di numeri. Questa passione mi ha portato alla scoperta di una nuova tecnica di fattorizzazione, basata su una chiave numerica, che offre una scorciatoia per ottenere la fattorizzazione in un tempo mai visto prima. Ho volutamente introdotto il concetto di "chiave" per rappresentare l’idea di una porta che si apre verso la soluzione.<br><br>L'obiettivo iniziale era trovare un numero specifico, quasi "magico", che potesse individuare automaticamente la posizione di uno dei fattori primi del semiprimo, eliminando così la ricerca per tentativi. Il percorso è stato tutt'altro che semplice, ma i continui progressi, sempre più promettenti, mi hanno portato alla soluzione che oggi dimostra la straordinaria potenza di questa chiave.<br><br><em>Vorrei sottolineare che non sono un matematico né un esperto di sicurezza informatica, ma questo non mi ha impedito di sfruttare la mia passione per esplorare queste tematiche.</em><br><br>Per concretizzare la mia scoperta, ho deciso di creare progetti dedicati alla sicurezza informatica, focalizzati sulla codifica dei dati. Mi sono ispirato al sistema RSA, introducendo però varianti che si adattano al mio metodo di fattorizzazione. Tra questi progetti, spicca GC57PrimeCrypt, che rappresenta l'apice del mio lavoro, ma non è l'unico. Altri progetti sono disponibili pubblicamente su GitHub all'indirizzo: https://github.com/Claugo/GC57eALcrypto.<br>Tra tutti, GC57PrimeCrypt si distingue per la capacità di combinare la fattorizzazione di grandi semiprimi con algoritmi avanzati come SHA-3, PBKDF2 e AES. Il programma è scritto interamente in Python e include una spiegazione dettagliat dei passaggi per la crittografia del testo e degli eventuali allegati.<br>Un elemento mancante, sia in questo che negli altri progetti, è rappresentato dalle librerie contenenti i semiprimi pre-generati e i relativi parametri. A tale scopo, ho sviluppato un altro programma, anch’esso in Python, che si occupa della creazione di queste librerie. Questo software è disponibile gratuitamente per chi desidera testare il mio metodo di crittografia: è sufficiente farne richiesta per ricevere il programma insieme alle istruzioni per generare le librerie necessarie. <hr></p></div><nav><a href="finestre2.html">La Formula Matematica</a><a href="finestre3.html">Come funziona(video)</a><a href="finestre4.html">GC57PrimeCript</a><a href="finestre5.html">Alcune Considerazioni</a></nav>
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina con Pulsanti e Immagine</title>
+    <style>
+        body {
+            background-image: url('sfondo.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: rgb(3, 28, 75);
+            border: 2px solid #388E3C;
+            border-radius: 5px;
+            padding: 20px;
+            font-size: 14px;
+            font-style: italic;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a08c;
+            border-color: #7e5221;
+        }
+
+        .image-container {
+            box-shadow: 0 0 0 3px #054672;
+            border-radius: 10px;
+            background-color: #b4d4cf;
+            width: 100%;
+            text-align: center;
+        }
+        h3 {
+            margin-bottom: 0;
+            font-size: 70px;
+            font-weight: bold;
+            color: #7e0610;
+            text-align: center;
+            max-width: 90%;
+
+        }
+
+        h4 {
+            margin-top: 5px;
+            margin-bottom: 40px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #7e0610;
+            text-align: center;
+            max-width: 90%;
+
+        }
+
+
+
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(92, 23, 6);
+            /*border: 3px solid #6404b3;*/
+            padding: 20px;
+            /* background-color: rgba(255, 255, 255, 0.247);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+            text-align: center;
+            max-width: 100%;
+        }
+
+
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 60px;
+            color: rgb(25, 6, 92);
+            border: 3px solid #ffffff;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 90%;
+        }
+
+
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 600px;
+            background: #000;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+            display: block;
+        }
+
+        #cookie-banner button {
+            background: #f1d600;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        #cookie-banner button:hover {
+            background: #e6c400;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+                padding: 15px;
+                margin-bottom: 30px;
+            }
+
+            .buttons {
+                grid-template-columns: 1fr;
+            }
+
+            button {
+                padding: 15px;
+                font-size: 12px;
+            }
+
+            h2 {
+                font-size: 18px;
+                padding: 15px;
+            }
+            h3 {
+                font-size: 28px;
+                padding: 15px;
+            }
+            h4 {
+                font-size: 18px;
+                padding: 15px;
+            }
+
+
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <h3><em>Algortimo GC57</em></h3>
+    <h4><em>Fattorizzazione di grandi numeri Semiprimi</em></h4>
+    <h1>Il mistero delle chiavi nascoste nell'algebra</h1>
+
+    <div class="container">
+        <div class="buttons">
+            <button onclick="window.location.href='pagina1.html'">Introduzione</button>
+            <button onclick="window.location.href='pagina2.html'">La formula matematica</button>
+            <button onclick="window.location.href='pagina3.html'">Come funziona GC57</button>
+            <button onclick="window.location.href='pagina4.html'">GC57PrimeCrypt</button>
+            <button onclick="window.location.href='pagina5.html'">Diofante</button>
+            <button onclick="window.location.href='pagina6.html'">Contatti</button>
+            <button onclick="window.location.href='pagina7.html'">Creazione Semiprimi (video)</button>
+        </div>
+
+        <div class="image-container">
+            <h2>Un segreto nei numeri: Tra semiprimi e Diofante, "la matematica che sorprende".</h2>
+        </div>
+    </div>
+
+    <div id="cookie-banner">
+        <p>Avviso sull'utilizzo dei cookie: Questo sito è stato creato esclusivamente a scopo divulgativo e non
+            raccoglie né memorizza dati sensibili degli utenti. I cookie vengono impiegati solo per garantire il
+            corretto funzionamento del sito e migliorare l'esperienza di navigazione. Proseguendo con l'uso del sito,
+            accetti l'utilizzo di questi cookie.</p>
+        <button onclick="acceptCookies()">Accetto</button>
+    </div>
+
+    <script>
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        window.onload = function () {
+            if (localStorage.getItem('cookiesAccepted') === 'true') {
+                document.getElementById('cookie-banner').style.display = 'none';
+            }
+        };
+    </script>
+</body>
+
+</html>
