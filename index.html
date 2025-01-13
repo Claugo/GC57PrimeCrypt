@@ -85,7 +85,7 @@
 
 
         h2 {
-            font-size: 20px;
+            font-size: 25px;
             font-weight: bold;
             color: rgb(92, 23, 6);
             /*border: 3px solid #6404b3;*/
@@ -113,6 +113,35 @@
         }
 
 
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 600px;
+            background: #000;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+            display: block;
+        }
+
+        #cookie-banner button {
+            background: #f1d600;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        #cookie-banner button:hover {
+            background: #e6c400;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 24px;
@@ -134,7 +163,7 @@
                 padding: 15px;
             }
             h3 {
-                font-size: 28px;
+                font-size: 35px;
                 padding: 15px;
             }
             h4 {
@@ -153,7 +182,7 @@
 <body>
     <h3><em>Algortimo GC57</em></h3>
     <h4><em>Fattorizzazione di grandi numeri Semiprimi</em></h4>
-    <h1>Il mistero delle chiavi nascoste nell'algebra</h1>
+    <h1>Le chiavi nascoste nell'algebra</h1>
 
     <div class="container">
         <div class="buttons">
@@ -167,10 +196,30 @@
         </div>
 
         <div class="image-container">
-            <h2>Un segreto nei numeri: Tra semiprimi e Diofante, "la matematica che sorprende".</h2>
+            <h2>Tra semiprimi e Diofante, "la matematica che sorprende"</h2>
         </div>
     </div>
 
+    <div id="cookie-banner">
+        <p>Avviso sull'utilizzo dei cookie: Questo sito è stato creato esclusivamente a scopo divulgativo e non
+            raccoglie né memorizza dati sensibili degli utenti. I cookie vengono impiegati solo per garantire il
+            corretto funzionamento del sito e migliorare l'esperienza di navigazione. Proseguendo con l'uso del sito,
+            accetti l'utilizzo di questi cookie.</p>
+        <button onclick="acceptCookies()">Accetto</button>
+    </div>
+
+    <script>
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        window.onload = function () {
+            if (localStorage.getItem('cookiesAccepted') === 'true') {
+                document.getElementById('cookie-banner').style.display = 'none';
+            }
+        };
+    </script>
 </body>
 
 </html>
