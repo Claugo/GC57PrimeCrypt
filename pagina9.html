@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La mia pagina web</title>
+    <style>
+        /* Layout generale */
+        body {
+            background-color: #dee3e7;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .code-container {
+            max-width: 800px;
+            /* Larghezza massima */
+            margin: 20px auto;
+            /* Margine automatico per centrare */
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+            /* Aggiunge lo scroll se necessario */
+        }
+
+
+#formula-container {
+    overflow-x: auto;
+    /* Mantieni lo scroll orizzontale */
+    max-width: 100%;
+    /* Limita la larghezza al contenitore */
+    padding: 10px;
+    /* Aggiungi padding per spaziatura */
+}
+
+        #formula {
+            text-align: center;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+
+#testo-sopral {
+    color: #810f0f;      
+    text-align: left;     
+    font-size: 20px;      
+    margin-bottom: 20px;  
+    margin-left: auto;    
+    margin-right: auto;   
+    width: fit-content;   
+
+}
+
+
+        #testo-sopra {
+            color: #070707;
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        #testo-sopra2 {
+            color: #0b0a5e;
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        
+        .evidenziato {
+            color: #1411bb;
+            /* Colore per il testo */
+            font-weight: bold;
+            /* Grassetto per il testo */
+            font-style: italic;
+            /* Corsivo */
+            background-color: #e0d538;
+            /* Sfondo per evidenziare */
+        }
+
+/* Adatta il titolo */
+@media (max-width: 768px) {
+    #titolo {
+        font-size: 28px;
+    }
+
+    .colonna-testo {
+        font-size: 16px;
+        /* Riduci il font per testi lunghi */
+    }
+}
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            display: inline-block; /* Imposta come blocco inline per il padding */
+            margin: 10px;
+            text-decoration: none; /* Rimuove la sottolineatura */
+            color: white; /* Colore del testo */
+            background-color: #1411bb; /* Colore di sfondo del pulsante */
+            padding: 10px 20px; /* Padding interno */
+            border-radius: 5px; /* Angoli arrotondati */
+            transition: background-color 0.3s; /* Transizione per l'effetto hover */
+        }
+        nav a:hover {
+            background-color: #0d0f8a; /* Colore di sfondo al passaggio del mouse */
+        }
+
+        .contenitore {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+
+        .colonna-testo {
+           color: #0c174b;
+           padding: 10px;
+           max-width: 860px; 
+           width: 100%; 
+           text-align: left;
+           font-size: 18px;
+        }
+
+
+        #immagine{
+            max-width: 640px;
+            height: auto;
+            cursor: pointer;
+            /* Rimuovi margini manuali */
+            margin: 0;
+        }
+
+/* Migliora il testo sotto */
+.testo-sotto {
+    color: #0b0a5e;
+    font-size: 18px;
+    text-align: left;
+    /* Testo più piccolo per schermi stretti */
+    padding: 10px;
+    margin: 0 auto; /* Centra il blocco di testo */
+    max-width: 700px; /* Imposta una larghezza massima per il testo */
+    line-height: 1.8; /* Aumenta l'interlinea per una migliore */
+    }
+
+        h2 {
+            text-align: left; /* Allinea il testo al centro */
+        }
+        
+        
+        /* Media query per dispositivi più piccoli */
+
+/* Media query aggiuntive per smartphone */
+@media (max-width: 480px) {
+    .contenitore {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #immagine {
+            max-width: 100%;
+        }
+
+
+
+    #formula {
+        font-size: 14px;
+        /* Riduci la dimensione delle formule */
+    }
+}
+    </style>
+    <!-- MathJax -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+<h1 id="titolo" style="text-align: center; margin-top: 0; font-size: 50px; color: rgb(126, 24, 24);">Le Chiavi</h1>
+
+    <!-- Contenitore per l'immagine e il testo -->
+    <div class="contenitore">
+        <div class="colonna-testo">
+            <h2><em>In sostanza, "la chiave" è un numero intero la cui proprietà identifica tutti i numeri, composti, o semiprimi, che vengono
+            creati a partire dai due coefficienti “A, B”, all’interno di un intervallo.</em></h2><br>
+            <p>Questa chiave non è un numero preciso, ma deve avere una correlazione con il coefficiente “B”, cioè il coefficiente più
+            grande, e che questo sia distanziato dal coefficiente “A” di una o più cifre, che come espresso nell’esempio riportato
+            nella pagina “contenitori” indica in modo approssimativo l’entità di questo campo.<br><br>
+            
+            Il titolo di questa pagina è <em>“Le Chiavi”</em> perché: Di chiavi ne esistono altre, oltre quella che ho mostrato , mentre quella che
+            vado a mostrare ora è quella che genera il più grande intervallo che sono riuscito ad attribuire a questa proprietà.<br><br>
+            
+            Per esprimere una considerazione personale, il tipo di chiave da me usato nella dimostrazione della pagina “La Formula”
+            è quello che si adatta di più al programma di crittografia. Questo tipo di chiave, invece, è secondo il mio modesto
+            parere più adatta alla ricerca scientifica. Il fatto che questa chiave generi un intervallo molto più grande, con la
+            tendenza ad aumentare questa differenza con l’aumentare dei due coefficienti, non porta ulteriori benefici alla
+            sicurezza dei numeri primi coinvolti, ma a livello di equazione si. Comunque la si voglia guardare siamo di fronte a una
+            proprietà straordinariamente unica.<br><br>
+            
+            
+            <mark>La caratteristica di questa chiave è quella di trovarsi poco sotto il coefficiente “B” e per l’esattezza “B-1”</mark>
+
+            </p>
+        </div>
+    </div>
+
+    
+<div id="formula-container">
+
+    
+    <p id="testo-sopra"><mark>E il suo intervallo lo possiamo calcolare in questo modo:</mark></p>
+    
+    <div id="formula">
+        $$ \textcolor{blue}{{I =[ \frac{B-1}{(np \mod (B-1))}}]*2} $$
+    </div><br><br>
+    
+    <p id="testo-sopral"><em>Per chiarezza, in questa pagina riporterò la sequenza completa della<br>
+        pagina “La Formula” rielaborata con questo tipo di chiave, fino al calcolo dell'intervallo.<br>
+    Questo farà si che non dobbiate alternarvi tra questa pagina e quella della formula<br>
+    per riuscire a comprendere meglio di cosa sto parlando </em></p><br><br>
+
+    <p id="testo-sopra">Calcolo il prodotto di np</p>
+    <div id="formula">
+        $$ \textcolor{blue}{(a^{ae} + 1)(b^{be} + 1) = np} $$
+    </div><br>
+    
+    <p id="testo-sopra">Calcolo la chiave C.</p>
+    <div id="formula">
+        $$ \textcolor{blue}{C = b^{be}-1} $$
+    </div><br>
+
+    <p id="testo-sopra">Calcolo L'intervallo</p>
+    <div id="formula">
+        $$ \textcolor{blue}{{I =[ \frac{C}{(np \mod C)}}]*2} $$
+    </div><br><br><br>
+
+
+
+    <div class="contenitore">
+        <div class="colonna-testo">
+            <em>L'intervallo trovato da questa sequenza sarà molto più grande di quello
+            che io utilizzo per il programma di criptazione,
+            e come detto sopra, questa differenza aumenterà con l'aumentare dei due coefficienti A e B.<br><br>
+            Nella pagina "contenitori" ho inserito lo scrpt di Python per mostrare il test eseguito.<br>
+            Qui sotto inserirò lo stesso test ma con la differenza che in questo caso userà la chiave<br>
+            descritta in questa pagina.</em>
+        </div>
+    </div>
+
+
+<div class="code-container">
+
+    <pre><code>
+# * GC57 test contenitore chiave 2
+from math import gcd,log
+from random import randint, seed
+import time
+from gmpy2 import next_prime as nprime
+from gmpy2 import is_prime as isprime
+
+# **** imposto il seme di ricerca random
+T=int(time.time())
+seed(T)
+
+# definisco il ciclo di ripetizione per entrambi i cicli inseriti
+rip=10
+
+# **** imposto due numeri primi
+ps = 1019039871272183629436677933147
+qs = 240877663362416822161232416951
+
+# **** imposto gli esponenti
+p=ps**8
+q=qs**12
+
+# **** Calcolo la chiave e l'intervallo
+chiave = q-1
+print("chiave Q-1 =",chiave)
+campo = (chiave // (((p + 1) * (q + 1)) % chiave))*2
+print("campo =", campo, " = ", " 2**", int(log(campo, 2)))
+# **** Imposto variabili progressione
+v1=0
+v2=1
+# **** identifico il numero primo
+for i in range(rip):
+    trovato=0
+    p_campo = randint(campo*v1, campo*v2)
+    q_campo = randint(campo*v1, campo*v2)
+    primo1 = nprime(p + p_campo)
+    primo2= nprime(q + q_campo)
+    n=primo1*primo2
+    for k in range(rip):
+        r=gcd(n,(n%chiave)+chiave*k)
+        if r!=1:
+            print("---------------------------------------------------------------------")
+            print()
+            print("Test divisore 1: ", isprime(r))
+            print("Test divisore 2: ", isprime(n//r))
+            print("divisore : ", r)
+            print("contenitore k : ",k)
+            print("contenitore v1 : ",v1)
+            print()
+            print("Semiprimo analizzato: ",n)
+            print()
+            trovato=1
+            break
+    if trovato==0:
+        print("attenzione: nessun divisore trovato per il contenitore :",v1)
+        break
+    v1+=1
+    v2+=1
+</code></pre>
+</div>
+
+        
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+
+</html>

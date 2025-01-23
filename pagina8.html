@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La mia pagina web</title>
+    <style>
+
+        /* Stile per il contenitore del codice */
+        .code-container {
+            max-width: 800px;
+            /* Larghezza massima */
+            margin: 20px auto;
+            /* Margine automatico per centrare */
+            background-color: #c5dac0;
+            border: 1px solid #000000;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+            /* Aggiunge lo scroll se necessario */
+        }
+
+        /* Stile per il codice */
+        code {
+            font-family: monospace;
+            white-space: pre-wrap;
+            /* Mantiene la formattazione */
+        }
+
+        /* Layout generale */
+        body {
+            background-color: #c5dac0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .formula {
+            color: rgb(8, 3, 53);
+            /* Colore del numero */
+        }
+
+
+        .evidenziato {
+            color: #1411bb;
+            /* Colore per il testo */
+            font-weight: bold;
+            /* Grassetto per il testo */
+            font-style: italic;
+            /* Corsivo */
+            background-color: #a31414;
+            /* Sfondo per evidenziare */
+        }
+
+        #titolo {
+            color: #071b72;
+            font-size: 34px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            display: inline-block; /* Imposta come blocco inline per il padding */
+            margin: 10px;
+            text-decoration: none; /* Rimuove la sottolineatura */
+            color: white; /* Colore del testo */
+            background-color: #1411bb; /* Colore di sfondo del pulsante */
+            padding: 10px 20px; /* Padding interno */
+            border-radius: 5px; /* Angoli arrotondati */
+            transition: background-color 0.3s; /* Transizione per l'effetto hover */
+        }
+        nav a:hover {
+            background-color: #800707; /* Colore di sfondo al passaggio del mouse */
+        }
+
+        .contenitore {
+            display: flex;
+            align-items: center;
+            /* Centra verticalmente */
+            justify-content: center;
+            /* Centra orizzontalmente */
+            margin-top: 20px;
+            flex-wrap: wrap;
+            /* Gestisce il layout su schermi più piccoli */
+            gap: 20px;
+            /* Spaziatura tra gli elementi */
+        }
+
+        #immagine{
+            max-width: 800px;
+            height: auto;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .colonna-testo {
+            color: #0c174b;
+            padding: 10px;
+            max-width: 860px;
+            text-align: left;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            background-color: #c5dac0;
+            font-size: 18px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow: auto;
+            border-radius: 5px;
+        }
+        code {
+            font-family: monospace;
+        }
+
+        h1 {
+            font-size: 48px;
+            /* Dimensione del font */
+            color: #a01414;
+            /* Colore fumo di Londra */
+            text-shadow:
+                0 0 5px rgba(10, 99, 99, 0.8),
+                /* Ombra chiara */
+                0 0 10px rgba(10, 99, 99, 0.6),
+                0 0 15px rgba(10, 99, 99, 0.4),
+                0 0 20px rgba(10, 99, 99, 0.2);
+            /* Ombra sfumata */
+        }
+        
+        h4 {
+            color: rgb(179, 19, 19);
+
+        }
+        /* Media query per dispositivi più piccoli */
+        @media (max-width: 768px) {
+            .contenitore {
+                flex-direction: column;
+            }
+
+            #immagine{
+                max-width: 100%;
+            }
+
+            .colonna-testo {
+                width: 100%;
+            }
+        }
+    </style>
+    <!-- MathJax -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+    <h1 id="titolo">I CONTENITORI</h1>
+
+
+    <!-- Contenitore per l'immagine e il testo -->
+    <div class="contenitore">
+        <div class="colonna-testo">
+            <h2>Nota:</h2>
+            <p><hr><h4>Prima di proseguire nella lettura di questa pagina, consiglio vivamente, se non l’avete già fatto, di consultare le
+            altre pagine del sito. Qui troverete spiegazioni dettagliate su che cos’è l’algoritmo GC57, la proprietà su cui si basa,
+            oltre a filmati esplicativi che ne illustrano il funzionamento. Questo vi aiuterà a comprendere meglio i termini
+            utilizzati, come “intervallo”, “chiave” e altri concetti fondamentali che verranno approfonditi in questa pagina.</h4><hr><br><br>
+    Ho deciso di aprire questa pagina per creare un confronto scientifico su questa proprietà e stimolare l'interazione tra
+    gli utenti. Sulla base delle mie sperimentazioni, e con l’aiuto di un secondo interlocutore, sono state identificate
+    diverse “chiavi”. Ognuna di queste genera un determinato intervallo numerico.<br> Tra queste chiavi, quella che genera
+    l’intervallo più grande si trova poco sotto il coefficiente “b”, con “b” maggiore di “a”. Per descrivere questa
+    relazione, si può utilizzare il calcolo a⋅b=n, dove a e b sono i due coefficienti principali, e il loro prodotto
+    determina il risultato n. Come già spiegato, per il corretto funzionamento della proprietà, è fondamentale considerare
+    la differenza nel numero di cifre tra a e b. Questa differenza indica, in modo approssimativo, un esponente di base 10
+    che definisce l'intervallo. Inoltre, è ormai evidente che la proprietà si comporta meglio con numeri grandi o molto
+    grandi, piuttosto che con numeri piccoli.<br><br>
+    Ecco un piccolo esempio di calcolo approssimativo dell’intervallo: se a=1234 (4 cifre) e b=123456 (6 cifre), allora
+    l’intervallo sarà indicativamente di <span class="formula">10<sup>2</sup></span><br><br><hr>
+    Ma quello di cui vorrei parlare in questa pagina è una caratteristica di questa proprietà molto particolare:<br> <strong>Gli
+    scomparti; ovvero dei contenitori di intervalli.</strong> La definizione di intervallo, già espressa più volte su questo sito, si
+    riferisce a quell’area numerica dove il GC57 riesce a fattorizzare senza alcuna implementazione aggiuntiva.
+    Di questi contenitori ne esistono tantissimi, posizionati in ordine crescente. Ogni contenitore occupa una posizione
+    precisa, e questa posizione determina l’implementazione della proprietà. Questo aspetto apre nuove possibilità di studio
+    e applicazione della proprietà stessa.<br><br><hr>
+    Proviamo a visualizzare questo concetto in una immagine<br><br>
+   
+    <div class="contenitore">
+    <img id="immagine" src="immagine2.png" alt="Il mio algoritmo" onclick="openFullscreen(this)">
+            </p>
+        </div>        
+        </div>
+    </div>
+
+
+    <div class="contenitore">
+        <div class="colonna-testo">
+            <p>
+                <hr>
+Come potete vedere, ogni contenitore contiene un intervallo. La partenza di ciascun intervallo, dopo l’intervallo zero,
+coincide con la fine dell’intervallo precedente, mentre la sua fine corrisponde all’inizio dell’intervallo successivo.
+Proseguendo in modo crescente (0, 1, 2, 3…), questi contenitori si estendono progressivamente. Tuttavia, l’estensione
+degli intervalli non è infinita, ma è limitata dalla grandezza del semiprimo, che ne determina la fine. Anche se questa
+fine può essere estremamente grande, rimane comunque finita, poiché dipende direttamente dalla relazione tra i
+coefficienti a e b, e dalla loro distanza in cifre.<br><br>
+<strong>Con l'esempio sotto proverò a semplificare il concetto di “contenitore”:</strong><br><br>
+Supponiamo ora di aver trovato un intervallo di <span class="formula">2<sup>100</sup></span>. Secondo la tabella riportata sopra, il contenitore (intervallo
+0), conterrà una numerazione da 0 a <span class="formula">2<sup>100</sup></span>, essendo 0 un numero nullo, diciamo da 1 a <span class="formula">2<sup>100</sup></span>. Di conseguenza i contenitori
+successivi conterranno la stessa quantità numerica.<br><br> 
+Per eseguire un test che non lascia dubbi, dobbiamo eseguire alcuni controlli, che naturalmente io ho già
+eseguito con successo.<br><br>
+
+Ho creato un ciclo ripetitivo di 10 implementazioni così composto:<br><br>
+    1. imposto i numeri a e b<br><br>
+    2. Calcolo la “chiave” e l’intervallo “I”<br><br>
+    3. imposto le variabili di progressività v1=0,v2=1<br><br>
+    4. Trovo il numero casuale all’interno di I per j1 e j2 utilizzando la funzione randint: j1=randint(I*v1+1, I*v2),
+    j1=randint(I*v1+1, I*v2)<br><br>
+    5. Trasformo i numeri trovati in numeri primi con la funzione nextprime: p=nextprime(a+j1), q=nextprime(b+j2)<br><br>
+    6. Calcolo il semiprimo con i due fattori primi ottenuti: pq=s<br><br>
+    7. Apro un ciclo for di 10 implementazione e inserisco dentro la proprietà della chiave per fattorizzare il semiprimo:
+    MCD(s, (s mod chiave)+chiave*k) - “k rappresenta il numero del ciclo e cioè da 0 a 9”<br><br>
+    8. Inserisco la condizione che se MCD restituisce un valore diverso da 1, viene stampato il divisore trovato assieme al
+    valore di k. A quel punto questo ciclo si interrompe.<br><br>
+    9. Verifico che il divisore trovato sia un numero primo con la funzione isprime<br><br>
+    10. Aggiorno le variali con progressione di 1: v1+=1 e v2+=1<br><br>
+    11. Torno al passaggio 4 e ripeto il processo, mantenendo invariati i parametri del punto 7, ovvero il ciclo iterativo
+    di k da 0 a 9.<br><br>
+    Con questo approccio, i numeri casuali vengono prelevati all’interno dei vari contenitori, e il test mi consente di
+    verificare in quale contenitore il semiprimo è stato fattorizzato. In particolare, il test deve confermare che il
+    divisore corrisponde al contenitore impostato da v1. Naturalmente, è importante ricordare che la chiave rimane sempre
+    la stessa durante tutto il processo.<br><br>
+    
+    Di seguito troverete lo script Python che ho utilizzato per eseguire il test descritto. Condividere questa scoperta è,
+    per me, un’opportunità per contribuire a una maggiore comprensione di alcune proprietà ancora poco esplorate della
+    teoria dei numeri. Mi auguro che questa pagina possa rappresentare uno stimolo per ulteriori studi e applicazioni
+    pratiche, e ringrazio chiunque voglia contribuire al confronto scientifico.
+
+                </p>
+        </div>
+    </div>
+
+
+<div class="code-container">
+
+<pre><code>
+# * GC57 test contenitore
+from math import gcd,log
+from random import randint, seed
+import time
+from gmpy2 import next_prime as nprime
+from gmpy2 import is_prime as isprime
+    
+# **** imposto il seme di ricerca random
+T=int(time.time())
+seed(T)
+    
+# definisco il ciclo di ripetizione per entrambi i cicli inseriti
+rip=10
+    
+# **** imposto due numeri primi
+ps = 1019039871272183629436677933147
+qs = 240877663362416822161232416951
+    
+# **** imposto gli esponenti
+p=ps**8
+q=qs**12
+qq=qs
+    
+# **** Calcolo la chiave e l'intervallo
+nn=(p+1)*(q+1)
+esp=int(log(nn,qq))//2
+chiave=qq**esp
+print("---------------------------------------------------------------------")
+print("chiave =",qq,"con esponente ",esp)
+campo=chiave//(((p+1)*(q+1))%chiave)
+print("campo =",campo," = "," 2**",int(log(campo,2)))
+# **** Imposto variabili prograssione
+v1=0
+v2=1
+# **** identifico il numero primo
+for i in range(rip):
+    trovato=0
+    p_campo = randint(campo*v1, campo*v2)
+    q_campo = randint(campo*v1, campo*v2)
+    primo1 = nprime(p + p_campo)
+    primo2= nprime(q + q_campo)
+    n=primo1*primo2
+    for k in range(rip):
+        r=gcd(n,(n%chiave)+chiave*k)
+        if r!=1:
+            print("---------------------------------------------------------------------")
+            print()
+            print("Test divisore 1: ", isprime(r))
+            print("Test divisore 2: ", isprime(n//r))
+            print("divisore : ", r)
+            print("contenitore k : ",k)
+            print("contenitore v1 : ",v1)
+            print()
+            print("Semiprimo analizzato: ",n)
+            print()
+            trovato=1
+            break
+    if trovato==0:
+        print("attenzione: nessun divisore trovato per il contenitore :",v1)
+        break
+    v1+=1
+    v2+=1
+</code></pre>
+</div>    
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+    
