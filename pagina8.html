@@ -217,12 +217,12 @@ Ho creato un ciclo ripetitivo di 10 implementazioni così composto:<br><br>
     1. imposto i numeri a e b<br><br>
     2. Calcolo la “chiave” e l’intervallo “I”<br><br>
     3. imposto le variabili di progressività v1=0,v2=1<br><br>
-    4. Trovo il numero casuale all’interno di I per j1 e j2 utilizzando la funzione randint: j1=randint(I*v1+1, I*v2),
-    j1=randint(I*v1+1, I*v2)<br><br>
-    5. Trasformo i numeri trovati in numeri primi con la funzione nextprime: p=nextprime(a+j1), q=nextprime(b+j2)<br><br>
+    4. Trovo il numero casuale all’interno di I per j1 e j2 utilizzando la funzione randint:<br> j1=randint(I*v1+1, I*v2)<br>
+    j2=randint(I*v1+1, I*v2)<br><br>
+    5. Trasformo i numeri trovati in numeri primi con la funzione nextprime:<br> p=nextprime(a+j1)<br> q=nextprime(b+j2)<br><br>
     6. Calcolo il semiprimo con i due fattori primi ottenuti: pq=s<br><br>
     7. Apro un ciclo for di 10 implementazione e inserisco dentro la proprietà della chiave per fattorizzare il semiprimo:
-    MCD(s, (s mod chiave)+chiave*k) - “k rappresenta il numero del ciclo e cioè da 0 a 9”<br><br>
+    MCD(s, (s mod chiave)+chiave*k)   <em>“k rappresenta il numero del ciclo e cioè da 0 a 9”</em><br><br>
     8. Inserisco la condizione che se MCD restituisce un valore diverso da 1, viene stampato il divisore trovato assieme al
     valore di k. A quel punto questo ciclo si interrompe.<br><br>
     9. Verifico che il divisore trovato sia un numero primo con la funzione isprime<br><br>
