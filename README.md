@@ -14,3 +14,5 @@ Un'altro progetto, anche più significativo di questo, GC57 QuantumShield, si ba
 L'unico elemento mancante nel programma, così come negli altri progetti basati sullo stesso principio, è rappresentato dalle librerie contenenti i semiprimi
 pre-generati e le rispettive chiavi. A tal proposito, esiste un altro programma, anch'esso scritto in Python, e che si occupa della creazione di queste librerie. 
 Questo programma è anch'esso disponibile su GitHub e per eventuali informazioni sull'uso, che non sono comprese nel file, potete sempre chiedere. Il programma di generazione di questo database si trova all'interno del repository GC57 QuantumShield
+
+Qui Trovate ulteriori informazioni che riguardano il sistema GC57 https://claugo.github.io/GC57PrimeCrypt/
